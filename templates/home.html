@@ -1,0 +1,76 @@
+{% extends "layout.html" %}
+{% block body %}
+<!--  <div class="jumbo">
+    <h2>Welcome to the Tory Burch<h2>
+    <h3>These are on sales<h3>
+  </div>
+-->
+<div class="table-users">
+<table class="table">
+<form action="{{ url_for('home') }}" method=post class=add-entry>
+<tr>
+	<td class="cell" colspan="5">
+		<select name="category" onchange="this.form.submit()">
+			<option value='View All' {{ cate_selected['View All'] }}>View All</option>
+			<option value='New Arrivals' {{ cate_selected['New Arrivals'] }}>New Arrivals</option>
+			<option value='Baby Bags' {{ cate_selected['Baby Bags'] }}>Baby Bags</option>
+			<option value='Backpacks' {{ cate_selected['Backpacks'] }}>Backpacks</option>
+			<option value='Clutches & Evening Bags' {{ cate_selected['Clutches & Evening Bags'] }}>Clutches & Evening Bags</option>
+			<option value='Cross-Body Bags' {{ cate_selected['Cross-Body Bags'] }}>Cross-Body Bags</option>
+			<option value='Mini Bags' {{ cate_selected['Mini Bags'] }}>Mini Bags</option>
+			<option value='Satchels & Shoulder Bags' {{ cate_selected['Satchels & Shoulder Bags'] }}>Satchels & Shoulder Bags</option>
+			<option value='Totes' {{ cate_selected['Totes'] }}>Totes</option>
+		</select>
+	</td>
+</tr>
+<tr class="row header blue">
+	<td width=* class="cell">Name<BR><button type="submit" name="sort" value="NAME ASC" style="background-color:{{sort['NAME ASC']}};border:0px">^</button><button type="button " name="sort" value="NAME DESC" style="background-color:{{sort['NAME DESC']}};border:0px">v</button></td>
+	<td width=70 class="cell">Standard<BR>Price<BR><button type="submit" name="sort" value="STANDARD_PRICE ASC, NAME ASC" style="background-color:{{sort['STANDARD_PRICE ASC, NAME ASC']}};border:0px">^</button><button type="submit" name="sort" value="STANDARD_PRICE DESC, NAME DESC" style="background-color:{{sort['STANDARD_PRICE DESC, NAME DESC']}};border:0px">v</button></td>
+	<td width=70 class="cell">Sales<BR>Price<BR><button type="submit" name="sort" value="SALES_PRICE ASC, NAME ASC" style="background-color:{{sort['SALES_PRICE ASC, NAME ASC']}};border:0px">^</button><button type="submit" name="sort" value="SALES_PRICE DESC, NAME DESC" style="background-color:{{sort['SALES_PRICE DESC, NAME DESC']}};border:0px">v</button></td>
+	<td width=70 class="cell">Discount<BR>Rate<BR><button type="submit" name="sort" value="DISC_RATE ASC, NAME ASC" style="background-color:{{sort['DISC_RATE ASC, NAME ASC']}};border:0px">^</button><button type="submit" name="sort" value="DISC_RATE DESC, NAME DESC" style="background-color:{{sort['DISC_RATE DESC, NAME DESC']}};border:0px">v</button></td>
+	<td width=80 class="cell">Last<BR>Updated<BR><button type="submit" name="sort" value="LAST_UPD ASC" style="background-color:{{sort['LAST_UPD ASC']}};border:0px">^</button><button type="submit" name="sort" value="LAST_UPD DESC" style="background-color:{{sort['LAST_UPD DESC']}};border:0px">v</button></td>
+</tr>
+</form>
+{% for error in errors %}
+<tr class="row">
+	<td colspan="6" class="cell">{{ error }}</td>
+</tr>
+{% endfor %}
+{%	for entry in entries %}
+<tr class="row">
+	<td width=* class="cell">
+		<table>
+		<tr>
+			<td>
+				<div class="crop"><a href="{{ entry.ALT_IMG_URL }}" class="preview" title='{{ entry.DETAILS|safe }}'><img align="left" src={{ entry.IMG_URL }}></a></div>
+			</td>
+			<td valign="top"><!--{{ entry.ROW_ID }}-->
+				<a class="info" target="_blank" href="{{ entry.URL }}">{{ entry.NAME }}<span>{{ entry.FULL_NAME|safe }}<BR>{{ entry.DESC|safe }}</span></a>
+<!--				<br>{%	for color in entry.COLOR %}
+					{{ color.NAME }}
+					{%	endfor %}
+-->
+			</td>
+		</tr>
+		<tr>
+			<td>{%	for color in entry.COLOR %}
+			<a href="{{ color.URL }}" class="tooltip" title="{{ color.NAME }}" target="_blank"><img class="tooltip" src="{{ color.IMG_URL }}"></a>
+			{%	endfor %}
+			</td>
+			<td valign="bottom">
+				<a href="{{ entry.CATEGORY_URL }}" class="tooltip" title="Go to the site" target="_blank">{{ entry.CATEGORY }}</a>
+			</td>
+		</tr>
+		</table>
+	<td width=70 class="cell">${{ entry.STANDARD_PRICE }}</td>
+	<td width=70 class="cell">${{ entry.SALES_PRICE }}</td>
+	<td width=70 class="cell"><font color=red>({{ entry.DISC_RATE }}%)</font></td>
+	<td width=80 class="cell">{{ entry.LAST_UPD }}</td>
+</tr>
+{%	else %}
+<tr class="row">
+	<td colspan="5" class="cell">Unbelievable.  No entries here so far</td>
+</tr>
+{%	endfor %}
+</table>
+{% endblock %}

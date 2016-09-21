@@ -1,0 +1,232 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #444;
+}
+ 
+/*
+ * Create dark grey header with a white logo
+ */
+  
+header {
+  background-color: #2B2B2B;
+  height: 35px;
+  width: 100%;
+  opacity: .9;
+  margin-bottom: 10px;
+}
+ 
+header h1.logo {
+  margin: 0;
+  font-size: 1.7em;
+  color: #fff;
+  text-transform: uppercase;
+  float: left;
+}
+ 
+header h1.logo:hover {
+  color: #fff;
+  text-decoration: none;
+}
+ 
+/*
+ * Center the body content
+ */
+  
+.container {
+  width: 940px;
+  margin: 0 auto;
+}
+ 
+div.jumbo {
+  padding: 10px 0 30px 0;
+  background-color: #eeeeee;
+  -webkit-border-radius: 6px;
+     -moz-border-radius: 6px;
+          border-radius: 6px;
+}
+ 
+h2 {
+  font-size: 3em;
+  margin-top: 40px;
+  text-align: center;
+  letter-spacing: -2px;
+}
+ 
+h3 {
+  font-size: 1.7em;
+  font-weight: 100;
+  margin-top: 30px;
+  text-align: center;
+  letter-spacing: -1px;
+  color: #999;
+}
+
+/*
+ * Display navigation links inline
+ */
+ 
+.menu {
+  float: right;
+  margin-top: 8px;
+}
+ 
+.menu li {
+  display: inline;
+}
+ 
+.menu li + li {
+  margin-left: 35px;
+}
+ 
+.menu li a {
+  color: #999;
+  text-decoration: none;
+}
+
+/*
+ * Display table inside
+ */
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  color: #3b3b3b;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  background: #2b2b2b;
+}
+
+.wrapper {
+  margin: 0 auto;
+  padding: 40px;
+  max-width: 800px;
+}
+
+.table {
+  margin: 0 0 40px 0;
+  width: 100%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  display: table;
+}
+@media screen and (max-width: 580px) {
+  .table {
+    display: block;
+  }
+}
+
+.row {
+  display: table-row;
+  background: #f6f6f6;
+}
+.row:nth-of-type(odd) {
+  background: #e9e9e9;
+}
+.row.header {
+  font-weight: 900;
+  color: #ffffff;
+  background: #ea6153;
+}
+.row.green {
+  background: #27ae60;
+}
+.row.blue {
+  background: #2980b9;
+}
+@media screen and (max-width: 580px) {
+  .row {
+    padding: 8px 0;
+    display: block;
+  }
+}
+
+.cell {
+  padding: 6px 12px;
+  display: table-cell;
+}
+@media screen and (max-width: 580px) {
+  .cell {
+    padding: 2px 12px;
+    display: block;
+  }
+}
+
+/*
+img.thumb_nail {
+    width: 100px;
+    height: auto;
+}
+*/
+
+/*
+* 말풍선
+*/
+a.info{
+    position:relative; /*this is the key*/
+/*    z-index:24;*/
+    color:#000;
+    text-decoration:none}
+
+a.info:hover{z-index:25; background-color:#76B7E7}
+
+a.info span{display: none}
+
+a.info:hover span{ /*the span will display just on :hover state*/
+    display:block;
+    position:absolute;
+	font-weight:bold;
+    top:40px;left:125px; width:444px;
+    margin-left:-125px;
+	border:1px solid #0cf;
+    background-color:#0099FF;
+	color:#ffffff;
+    text-align: left;
+	z-index:9999999;}
+
+/*
+* 이미지
+*/
+.crop {
+float: left;
+overflow: hidden;
+}
+.crop img {
+margin:-50px 0px 0px 0px;
+    width: 100px;
+    height: auto;
+}
+
+/*  */
+a.tooltip{
+	font-size: 10px;
+	text-decoration:none;
+	color:#000
+}
+
+#tooltip{
+	position:absolute;
+	border:1px solid #333;
+	background:#f7f5d1;
+	padding:2px 5px;
+	color:#333;
+	display:none;
+	font-size: 14px;
+	}	
+
+/*  */
+
+
+/*  */
+
+#preview{
+	position:absolute;
+	border:1px solid #ccc;
+	background:#333;
+	padding:5px;
+	display:none;
+	color:#fff;
+	}
+
+/*  */
