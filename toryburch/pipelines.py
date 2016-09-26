@@ -118,7 +118,6 @@ class ToryburchPipeline(object):
                     , "SALES_PRICE":str(item['sales_price'][0].replace('$','').encode('utf-8'))
                                   })
                 prod_id = self.cursor.lastrowid
-
                 sql_ins_color = "INSERT INTO TORY_COLOR" \
                                 "(PAR_ROW_ID, NAME, URL, IMG_URL, CODE" \
                                 ", CREATED, LAST_UPD)" \

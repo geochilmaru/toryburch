@@ -15,7 +15,11 @@ class TorySpider(scrapy.Spider):
     name = "toryburch"
     allowed_domains = ["toryburch.com"]
     start_urls = [
-        "https://www.toryburch.com/"
+        # "https://www.toryburch.com/"
+        # "https://www.toryburch.com/on/demandware.store/Sites-ToryBurch_US-Site/default/Home-Show?cid=tb-geo-go-usa"
+        # "https://www.toryburch.com/on/demandware.store/Sites-ToryBurch_US-Site/default/Default-Start?campid=int_us"
+        "http://www.toryburch.com/on/demandware.store/Sites-ToryBurch_US-Site/default/Home-EUShopUS?cid=tb-geo-go-usa"
+        # "http://www.toryburch.com/?campid=int_us"
         # "https://www.toryburch.com/handbags-newarrivals/",
         # "https://www.toryburch.com/handbags/clutches-evening-bags/",
         # "https://www.toryburch.com/handbags/clutches-evening-bags/?icampid=hb_p3",
@@ -36,7 +40,7 @@ class TorySpider(scrapy.Spider):
         hxs = Selector(response)
         categories = ['New Arrivals', 'Baby Bags', 'Backpacks'
             , 'Clutches & Evening Bags', 'Cross-Body Bags'
-            , 'Mini Bags', 'Satchels & Shoulder Bags', 'Totes']
+            , 'Mini Bags', 'Satchels & Shoulder Bags', 'Totes', 'Sale']
         selects = []
         selects = hxs.xpath('//li[@class="handbags"]/ul/li/ul/li')
         for sel in selects:
@@ -73,12 +77,10 @@ class TorySpider(scrapy.Spider):
             img_url = sel.xpath('div[@class="image"]/div[@class="thumbnail"]/div/a/img[@class="product-image-primary"]/@src').extract()
             alt_img_url = sel.xpath('div[@class="image"]/div[@class="thumbnail"]/div/a/img[@class="alternateimage"]/@src').extract()
             alt_img_desc = sel.xpath('div[@class="image"]/div[@class="thumbnail"]/div/a/img[@class="alternateimage"]/@alt').extract()
-
             if not standard_price:
                 standard_price = no_sales_price
             if not sales_price:
                 sales_price = ['$0',]
-
             item["category"] = category
             item["category_url"] = category_url
             item["name"] = name

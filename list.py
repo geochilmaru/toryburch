@@ -84,7 +84,8 @@ def home():
         , 'Cross-Body Bags': ''
         , 'Mini Bags': ''
         , 'Satchels & Shoulder Bags': ''
-        , 'Totes': ''}
+        , 'Totes': ''
+        , 'Sale': ''}
     sort_arrow = {'DESC ASC':'white', 'DESC DESC':'white',
                   'STANDARD_PRICE ASC':'white', 'STANDARD_PRICE DESC':'white',
                   'SALES_PRICE ASC':'white', 'SALES_PRICE DESC':'white',
@@ -104,7 +105,6 @@ def home():
         # curr_sort = ""
     cate_selected[category] = "selected"
     sort_arrow[order_by] = 'red'
-
     db = get_db()
     # cur_prod = ""
     if category == "View All":

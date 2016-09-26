@@ -2,7 +2,40 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="131e9428-74cc-4c7d-93b7-efd3dbc811b7" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/python/crawl/toryburch/db/sqlite3.exe" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/python/crawl/toryburch/db/toryburch" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/python/crawl/toryburch/db/toryburch.db" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/.PyCharm2016.1/config/colors/Darcula copy.icls" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/python/crawl/.idea/crawl.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/python/crawl/.idea/encodings.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/python/crawl/.idea/misc.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/python/crawl/.idea/modules.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/python/crawl/.idea/vcs.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/python/crawl/.idea/workspace.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/python/crawl/toryburch/.idea/encodings.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/python/crawl/toryburch/.idea/misc.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/python/crawl/toryburch/.idea/modules.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/python/crawl/toryburch/.idea/toryburch.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/python/crawl/toryburch/.idea/vcs.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/python/crawl/toryburch/.idea/workspace.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/python/crawl/toryburch/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/python/crawl/toryburch/db/schema.sql" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/python/crawl/toryburch/flaskr.py_" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/python/crawl/toryburch/list.py" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/python/crawl/toryburch/scrapy.cfg" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/python/crawl/toryburch/scrapy_toryburch.bat" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/python/crawl/toryburch/static/main.css" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/python/crawl/toryburch/templates/about.html" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/python/crawl/toryburch/templates/home.html" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/python/crawl/toryburch/templates/layout.html" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/python/crawl/toryburch/templates/www.toryburch.com__handbags__clutches-evening-bags.html" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/python/crawl/toryburch/toryburch/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/python/crawl/toryburch/toryburch/items.py" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/python/crawl/toryburch/toryburch/pipelines.py" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/python/crawl/toryburch/toryburch/settings.py" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/python/crawl/toryburch/toryburch/spiders/TorySpider.py" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/python/crawl/toryburch/toryburch/spiders/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/python/crawl/toryburch/toryburch/templates/index.html" />
     </list>
     <ignored path="toryburch.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,8 +58,8 @@
       <file leaf-file-name="pipelines.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/toryburch/pipelines.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="528">
-              <caret line="35" column="16" selection-start-line="35" selection-start-column="16" selection-end-line="35" selection-end-column="16" />
+            <state relative-caret-position="352">
+              <caret line="120" column="58" selection-start-line="120" selection-start-column="58" selection-end-line="120" selection-end-column="58" />
               <folding />
             </state>
           </provider>
@@ -35,8 +68,8 @@
       <file leaf-file-name="list.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/list.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="630">
-              <caret line="72" column="28" selection-start-line="72" selection-start-column="28" selection-end-line="72" selection-end-column="28" />
+            <state relative-caret-position="132">
+              <caret line="118" column="31" selection-start-line="118" selection-start-column="31" selection-end-line="118" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -55,8 +88,20 @@
       <file leaf-file-name="TorySpider.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/toryburch/spiders/TorySpider.py">
           <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="438">
+              <caret line="53" column="32" selection-start-line="53" selection-start-column="32" selection-end-line="53" selection-end-column="32" />
+              <folding>
+                <marker date="1474874068029" expanded="false" signature="25:265" ph="import ..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
+        <entry file="file://C:/Python27/Lib/site-packages/scrapy/spiders/__init__.py">
+          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="220">
-              <caret line="44" column="57" selection-start-line="44" selection-start-column="57" selection-end-line="44" selection-end-column="57" />
+              <caret line="18" column="10" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -77,10 +122,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="width" value="960" />
+    <option name="height" value="1040" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -159,8 +202,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -174,6 +217,9 @@
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
   </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="131e9428-74cc-4c7d-93b7-efd3dbc811b7" name="Default" comment="" />
@@ -185,10 +231,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="0" y="0" width="960" height="1040" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0890411" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.09436008" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -233,34 +279,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/list.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scrapy.cfg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes.py" />
-    <entry file="file://$PROJECT_DIR$/toryburch/pipelines.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="35" column="16" selection-start-line="35" selection-start-column="16" selection-end-line="35" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/schema.sql" />
-    <entry file="file://$PROJECT_DIR$/flaskr.py" />
-    <entry file="file://$PROJECT_DIR$/list.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
+        <state relative-caret-position="1584">
           <caret line="72" column="28" selection-start-line="72" selection-start-column="28" selection-end-line="72" selection-end-column="28" />
           <folding />
         </state>
@@ -276,9 +295,180 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/toryburch/spiders/TorySpider.py">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1474874068029" expanded="false" signature="25:265" ph="import ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/Lib/site-packages/scrapy/spiders/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
-          <caret line="44" column="57" selection-start-line="44" selection-start-column="57" selection-end-line="44" selection-end-column="57" />
+          <caret line="18" column="10" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/toryburch/pipelines.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="770">
+          <caret line="35" column="16" selection-start-line="35" selection-start-column="16" selection-end-line="35" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/list.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1584">
+          <caret line="72" column="28" selection-start-line="72" selection-start-column="28" selection-end-line="72" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scrapy.cfg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/toryburch/spiders/TorySpider.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1474874068029" expanded="false" signature="25:265" ph="import ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/Lib/site-packages/scrapy/spiders/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="18" column="10" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/toryburch/pipelines.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="770">
+          <caret line="35" column="16" selection-start-line="35" selection-start-column="16" selection-end-line="35" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/list.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1584">
+          <caret line="72" column="28" selection-start-line="72" selection-start-column="28" selection-end-line="72" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scrapy.cfg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/toryburch/spiders/TorySpider.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1474874068029" expanded="false" signature="25:265" ph="import ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/Lib/site-packages/scrapy/spiders/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="18" column="10" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/toryburch/pipelines.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="35" column="16" selection-start-line="35" selection-start-column="16" selection-end-line="35" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/list.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scrapy.cfg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes.py" />
+    <entry file="file://$PROJECT_DIR$/schema.sql" />
+    <entry file="file://$PROJECT_DIR$/flaskr.py" />
+    <entry file="file://$PROJECT_DIR$/scrapy.cfg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/Lib/site-packages/scrapy/spiders/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="18" column="10" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/toryburch/pipelines.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="120" column="58" selection-start-line="120" selection-start-column="58" selection-end-line="120" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/list.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="118" column="31" selection-start-line="118" selection-start-column="31" selection-end-line="118" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/toryburch/spiders/TorySpider.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="438">
+          <caret line="53" column="32" selection-start-line="53" selection-start-column="32" selection-end-line="53" selection-end-column="32" />
+          <folding>
+            <marker date="1474874068029" expanded="false" signature="25:265" ph="import ..." />
+          </folding>
         </state>
       </provider>
     </entry>
