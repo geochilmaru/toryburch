@@ -93,8 +93,10 @@ def home():
     if request.method == 'POST':
         order_by = 'NAME ASC'
         category = "View All"
+        on_sale = "Y"
         try:
             category = request.form['category']
+            on_sale = request.form.get("on_sale")
             order_by = request.form['sort']
         except:
             pass
@@ -102,37 +104,76 @@ def home():
     else:
         category = "View All"
         order_by = 'NAME ASC'
+        on_sale = "Y"
         # curr_sort = ""
     cate_selected[category] = "selected"
     sort_arrow[order_by] = 'red'
+    if on_sale == "Y":
+        on_sale_checked = "checked"
+    else:
+        on_sale_checked = ""
     db = get_db()
     # cur_prod = ""
+    print on_sale
     if category == "View All":
-        sql_prod = 'SELECT Z.* ' \
-                   'FROM (SELECT ROW_ID, CATEGORY, CATEGORY_URL, NAME, FULL_NAME, DESC, URL' \
-                   '        , IMG_URL, ALT_IMG_URL, ALT_IMG_DESC, DETAILS ' \
-                   '        , STANDARD_PRICE, SALES_PRICE, LAST_UPD ' \
-                   '        , STANDARD_PRICE - SALES_PRICE AS DISC_PRICE ' \
-                   '        , CAST(((STANDARD_PRICE-SALES_PRICE)/STANDARD_PRICE)*100 AS INT) AS DISC_RATE ' \
-                   '    FROM TORY_PROD ' \
-                   '    WHERE SALES_PRICE <> \'0\' AND STATUS=\'ACTIVE\' ' \
-                   '    ) Z ' \
-                   'ORDER BY Z.'+ order_by
-                   # 'ORDER BY :ORDER_BY;'.format(ORDER_BY="SALES_PRICE")
+        if on_sale == "Y":
+            sql_prod = 'SELECT Z.* ' \
+                       'FROM (SELECT ROW_ID, CATEGORY, CATEGORY_URL, NAME, FULL_NAME, DESC, URL' \
+                       '        , IMG_URL, ALT_IMG_URL, ALT_IMG_DESC, DETAILS ' \
+                       '        , STANDARD_PRICE, SALES_PRICE, LAST_UPD ' \
+                       '        , STANDARD_PRICE - SALES_PRICE AS DISC_PRICE ' \
+                       '        , CASE WHEN SALES_PRICE=0 ' \
+                       '            THEN 0 ELSE CAST(((STANDARD_PRICE-SALES_PRICE)/STANDARD_PRICE)*100 AS INT) END' \
+                       '        AS DISC_RATE  ' \
+                       '    FROM TORY_PROD ' \
+                       '    WHERE SALES_PRICE <> \'0\' AND STATUS=\'ACTIVE\' ' \
+                       '    ) Z ' \
+                       'ORDER BY Z.'+ order_by
+        else:
+            sql_prod = 'SELECT Z.* ' \
+                       'FROM (SELECT ROW_ID, CATEGORY, CATEGORY_URL, NAME, FULL_NAME, DESC, URL' \
+                       '        , IMG_URL, ALT_IMG_URL, ALT_IMG_DESC, DETAILS ' \
+                       '        , STANDARD_PRICE, SALES_PRICE, LAST_UPD ' \
+                       '        , STANDARD_PRICE - SALES_PRICE AS DISC_PRICE ' \
+                       '        , CASE WHEN SALES_PRICE=0 ' \
+                       '            THEN 0 ELSE CAST(((STANDARD_PRICE-SALES_PRICE)/STANDARD_PRICE)*100 AS INT) END' \
+                       '        AS DISC_RATE  ' \
+                       '    FROM TORY_PROD ' \
+                       '    WHERE STATUS=\'ACTIVE\' ' \
+                       '    ) Z ' \
+                       'ORDER BY Z.'+ order_by
+        print sql_prod
         cur_prod = db.execute(sql_prod)
     else:
-        sql_prod = 'SELECT Z.* ' \
-                   'FROM (SELECT ROW_ID, CATEGORY, CATEGORY_URL, NAME, FULL_NAME, DESC, URL' \
-                   '        , IMG_URL, ALT_IMG_URL, ALT_IMG_DESC, DETAILS ' \
-                   '        , STANDARD_PRICE, SALES_PRICE, LAST_UPD ' \
-                   '        , STANDARD_PRICE - SALES_PRICE AS DISC_PRICE ' \
-                   '        , CAST(((STANDARD_PRICE-SALES_PRICE)/STANDARD_PRICE)*100 AS INT) AS DISC_RATE ' \
-                   '    FROM TORY_PROD ' \
-                   '    WHERE SALES_PRICE <> \'0\' AND STATUS=\'ACTIVE\' ' \
-                   '        AND CATEGORY = :CATEGORY ' \
-                   '    ) Z ' \
-                   'ORDER BY Z.'+ order_by
-                   # 'ORDER BY :ORDER_BY;'.format(ORDER_BY="SALES_PRICE")
+        if on_sale == "Y":
+            sql_prod = 'SELECT Z.* ' \
+                       'FROM (SELECT ROW_ID, CATEGORY, CATEGORY_URL, NAME, FULL_NAME, DESC, URL' \
+                       '        , IMG_URL, ALT_IMG_URL, ALT_IMG_DESC, DETAILS ' \
+                       '        , STANDARD_PRICE, SALES_PRICE, LAST_UPD ' \
+                       '        , STANDARD_PRICE - SALES_PRICE AS DISC_PRICE ' \
+                       '        , CASE WHEN SALES_PRICE=0 ' \
+                       '            THEN 0 ELSE CAST(((STANDARD_PRICE-SALES_PRICE)/STANDARD_PRICE)*100 AS INT) END' \
+                       '        AS DISC_RATE  ' \
+                       '    FROM TORY_PROD ' \
+                       '    WHERE SALES_PRICE <> \'0\' AND STATUS=\'ACTIVE\' ' \
+                       '        AND CATEGORY = :CATEGORY ' \
+                       '    ) Z ' \
+                       'ORDER BY Z.'+ order_by
+        else:
+            sql_prod = 'SELECT Z.* ' \
+                       'FROM (SELECT ROW_ID, CATEGORY, CATEGORY_URL, NAME, FULL_NAME, DESC, URL' \
+                       '        , IMG_URL, ALT_IMG_URL, ALT_IMG_DESC, DETAILS ' \
+                       '        , STANDARD_PRICE, SALES_PRICE, LAST_UPD ' \
+                       '        , STANDARD_PRICE - SALES_PRICE AS DISC_PRICE ' \
+                       '        , CASE WHEN SALES_PRICE=0 ' \
+                       '            THEN 0 ELSE CAST(((STANDARD_PRICE-SALES_PRICE)/STANDARD_PRICE)*100 AS INT) END' \
+                       '        AS DISC_RATE  ' \
+                       '    FROM TORY_PROD ' \
+                       '    WHERE STATUS=\'ACTIVE\' ' \
+                       '        AND CATEGORY = :CATEGORY ' \
+                       '    ) Z ' \
+                       'ORDER BY Z.' + order_by
+        print sql_prod
         cur_prod = db.execute(sql_prod, {"CATEGORY": category})
 
     prods = cur_prod.fetchall()
@@ -153,7 +194,9 @@ def home():
     #     cur_price = db.execute(sql_price, {"PAR_ROW_ID": prod_id})
     #     prices = cur_price.fetchall()
     #     prod['PRICE'] = prices
-    return render_template('home.html', entries=prods, errors=errors, sort=sort_arrow, cate_selected=cate_selected)
+    return render_template('home.html', entries=prods, errors=errors,
+                           sort=sort_arrow, cate_selected=cate_selected,
+                           on_sale_checked=on_sale_checked)
 
 
 @app.route('/about')
