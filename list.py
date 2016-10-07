@@ -114,7 +114,6 @@ def home():
         on_sale_checked = ""
     db = get_db()
     # cur_prod = ""
-    print on_sale
     if category == "View All":
         if on_sale == "Y":
             sql_prod = 'SELECT Z.* ' \
@@ -142,7 +141,6 @@ def home():
                        '    WHERE STATUS=\'ACTIVE\' ' \
                        '    ) Z ' \
                        'ORDER BY Z.'+ order_by
-        print sql_prod
         cur_prod = db.execute(sql_prod)
     else:
         if on_sale == "Y":
@@ -173,7 +171,6 @@ def home():
                        '        AND CATEGORY = :CATEGORY ' \
                        '    ) Z ' \
                        'ORDER BY Z.' + order_by
-        print sql_prod
         cur_prod = db.execute(sql_prod, {"CATEGORY": category})
 
     prods = cur_prod.fetchall()
