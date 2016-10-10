@@ -10,6 +10,7 @@
 
 import os
 from sqlite3 import dbapi2 as sqlite3
+from db import connect_db, init_db
 from flask import Flask, request, session, g, redirect, url_for, abort, \
      render_template, flash
 import copy
@@ -20,7 +21,7 @@ app = Flask(__name__)
 
 # Load default config and override config from an environment variable
 app.config.update(dict(
-    DATABASE=os.path.join(app.root_path +'/db/', 'toryburch.db'),
+    # DATABASE=os.path.join(app.root_path +'/db/', 'toryburch.db'),
     DEBUG=True,
     SECRET_KEY='development key',
     USERNAME='admin',
@@ -29,29 +30,30 @@ app.config.update(dict(
 app.config.from_envvar('FLASKR_SETTINGS', silent=True)
 
 
-def dict_factory(cursor, row):
-    d = {}
-    for idx, col in enumerate(cursor.description):
-        d[col[0]] = row[idx]
-    return d
+# def dict_factory(cursor, row):
+#     d = {}
+#     for idx, col in enumerate(cursor.description):
+#         d[col[0]] = row[idx]
+#     return d
+#
+#
+# def connect_db():
+#     """Connects to the specific database."""
+#     rv = sqlite3.connect(app.config['DATABASE'])
+#     rv.row_factory = dict_factory   #sqlite3.Row
+#     return rv
+#
+#
+# def init_db():
+#     """Initializes the database."""
+#     db = get_db()
+#     # with app.open_resource('./db/schema.sql', mode='r') as f:
+#     with open('./db/schema.sql', 'r') as f:
+#         db.cursor().executescript(f.read())
+#     db.commit()
 
 
-def connect_db():
-    """Connects to the specific database."""
-    rv = sqlite3.connect(app.config['DATABASE'])
-    rv.row_factory = dict_factory   #sqlite3.Row
-    return rv
-
-
-def init_db():
-    """Initializes the database."""
-    db = get_db()
-    with app.open_resource('./db/schema.sql', mode='r') as f:
-        db.cursor().executescript(f.read())
-    db.commit()
-
-
-# @app.cli.command('initdb')
+@app.cli.command('initdb')
 def initdb_command():
     """Creates the database tables."""
     init_db()
