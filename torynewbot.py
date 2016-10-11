@@ -59,7 +59,7 @@ def on_callback_query(msg):
     bot.answerCallbackQuery(query_id, text='got it', show_alert=False)
 
 
-TOKEN = "264200303:AAEqnIU8cnDmbFfRZuxVD5pfkRwXAJgxH10"
+TOKEN = sys.argv[1]  # get token from command-line
 bot = telepot.Bot(TOKEN)
 bot.message_loop({'chat': on_chat_message,
                   'callback_query': on_callback_query})

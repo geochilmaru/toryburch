@@ -36,7 +36,6 @@
       <change type="NEW" beforePath="" afterPath="$USER_HOME$/python/crawl/toryburch/toryburch/spiders/TorySpider.py" />
       <change type="NEW" beforePath="" afterPath="$USER_HOME$/python/crawl/toryburch/toryburch/spiders/__init__.py" />
       <change type="NEW" beforePath="" afterPath="$USER_HOME$/python/crawl/toryburch/toryburch/templates/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.py" afterPath="$PROJECT_DIR$/db.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/torynewbot.py" afterPath="$PROJECT_DIR$/torynewbot.py" />
     </list>
     <ignored path="toryburch.iws" />
@@ -102,8 +101,8 @@
       <file leaf-file-name="torynewbot.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/torynewbot.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="528">
-              <caret line="48" column="66" selection-start-line="48" selection-start-column="66" selection-end-line="48" selection-end-column="66" />
+            <state relative-caret-position="550">
+              <caret line="61" column="50" selection-start-line="61" selection-start-column="50" selection-end-line="61" selection-end-column="50" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -800,8 +799,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/torynewbot.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="48" column="66" selection-start-line="48" selection-start-column="66" selection-end-line="48" selection-end-column="66" />
+        <state relative-caret-position="550">
+          <caret line="61" column="50" selection-start-line="61" selection-start-column="50" selection-end-line="61" selection-end-column="50" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
