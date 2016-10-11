@@ -41,23 +41,26 @@ def initdb_command():
 
 
 def get_categories(show_type):
+    cate_url_all = "https://www.toryburch.com/handbags/view-all/"
     db = connect_db()
     if show_type.upper() == "/ALL":
-        sql_prod = 'SELECT CATEGORY, COUNT(1) AS COUNT ' \
+        sql_prod = 'SELECT CATEGORY, CATEGORY_URL, COUNT(1) AS COUNT ' \
                    'FROM TORY_PROD ' \
                    'WHERE STATUS=\'ACTIVE\' ' \
                    'GROUP BY CATEGORY '\
                    'UNION ALL '\
-                   'SELECT \'View All\' AS CATEGORY, COUNT(1) AS COUNT '\
+                   'SELECT \'View All\' AS CATEGORY, \''+ cate_url_all +'\' AS CATEGORY_URL '\
+                   ', COUNT(1) AS COUNT '\
                    'FROM TORY_PROD ' \
                    'WHERE STATUS=\'ACTIVE\''
     elif show_type.upper() == "/SALE":
-        sql_prod = 'SELECT CATEGORY, COUNT(1) AS COUNT ' \
+        sql_prod = 'SELECT CATEGORY, CATEGORY_URL, COUNT(1) AS COUNT ' \
                    'FROM TORY_PROD ' \
                    'WHERE SALES_PRICE <> \'0\' AND STATUS=\'ACTIVE\' ' \
                    'GROUP BY CATEGORY '\
                    'UNION ALL '\
-                   'SELECT \'View All\' AS CATEGORY, COUNT(1) AS COUNT '\
+                   'SELECT \'View All\' AS CATEGORY, \''+ cate_url_all +'\' AS CATEGORY_URL '\
+                   ', COUNT(1) AS COUNT '\
                    'FROM TORY_PROD ' \
                    'WHERE SALES_PRICE <> \'0\' AND STATUS=\'ACTIVE\''
     cur_prod = db.execute(sql_prod)
