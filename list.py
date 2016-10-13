@@ -84,6 +84,7 @@ def home():
         , 'Baby Bags': '', 'Backpacks': ''
         , 'Clutches & Evening Bags': ''
         , 'Cross-Body Bags': ''
+        , 'Hobos': ''
         , 'Mini Bags': ''
         , 'Satchels & Shoulder Bags': ''
         , 'Totes': ''
@@ -185,14 +186,6 @@ def home():
         cur_color = db.execute(sql_color, {"PAR_ROW_ID": prod_id})
         color = cur_color.fetchall()
         prod['COLOR'] = color
-    # for prod in prods:
-    #     prod_id = prod["ROW_ID"]
-    #     sql_price = 'SELECT STANDARD_PRICE, SALES_PRICE, CREATED, LAST_UPD ' \
-    #                 'FROM TORY_PRICE ' \
-    #                 'WHERE PAR_ROW_ID = :PAR_ROW_ID;'
-    #     cur_price = db.execute(sql_price, {"PAR_ROW_ID": prod_id})
-    #     prices = cur_price.fetchall()
-    #     prod['PRICE'] = prices
     return render_template('home.html', entries=prods, errors=errors,
                            sort=sort_arrow, cate_selected=cate_selected,
                            on_sale_checked=on_sale_checked)
@@ -203,47 +196,45 @@ def about():
 	return render_template('about.html')
 
 
-"""
-@app.route('/sort', methods=['POST'])
-def sort_query():
-    sort = [request.form['sort']]
-    # return sort[0]
-    return redirect(url_for('home', sort=sort[0]))
-
-
-@app.route('/add', methods=['POST'])
-def add_entry():
-    if not session.get('logged_in'):
-        abort(401)
-    db = get_db()
-    db.execute('insert into entries (title, text) values (?, ?)',
-               [request.form['title'], request.form['text']])
-    db.commit()
-    flash('New entry was successfully posted')
-    return redirect(url_for('show_entries'))
-
-
-@app.route('/login', methods=['GET', 'POST'])
-def login():
-    error = None
-    if request.method == 'POST':
-        if request.form['username'] != app.config['USERNAME']:
-            error = 'Invalid username'
-        elif request.form['password'] != app.config['PASSWORD']:
-            error = 'Invalid password'
-        else:
-            session['logged_in'] = True
-            flash('You were logged in')
-            return redirect(url_for('show_entries'))
-    return render_template('login.html', error=error)
-
-
-@app.route('/logout')
-def logout():
-    session.pop('logged_in', None)
-    flash('You were logged out')
-    return redirect(url_for('show_entries'))
-"""
+# @app.route('/sort', methods=['POST'])
+# def sort_query():
+#     sort = [request.form['sort']]
+#     # return sort[0]
+#     return redirect(url_for('home', sort=sort[0]))
+#
+#
+# @app.route('/add', methods=['POST'])
+# def add_entry():
+#     if not session.get('logged_in'):
+#         abort(401)
+#     db = get_db()
+#     db.execute('insert into entries (title, text) values (?, ?)',
+#                [request.form['title'], request.form['text']])
+#     db.commit()
+#     flash('New entry was successfully posted')
+#     return redirect(url_for('show_entries'))
+#
+#
+# @app.route('/login', methods=['GET', 'POST'])
+# def login():
+#     error = None
+#     if request.method == 'POST':
+#         if request.form['username'] != app.config['USERNAME']:
+#             error = 'Invalid username'
+#         elif request.form['password'] != app.config['PASSWORD']:
+#             error = 'Invalid password'
+#         else:
+#             session['logged_in'] = True
+#             flash('You were logged in')
+#             return redirect(url_for('show_entries'))
+#     return render_template('login.html', error=error)
+#
+#
+# @app.route('/logout')
+# def logout():
+#     session.pop('logged_in', None)
+#     flash('You were logged out')
+#     return redirect(url_for('show_entries'))
 
 if __name__ == '__main__':
 #    app.run()

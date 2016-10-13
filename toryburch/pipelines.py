@@ -12,6 +12,7 @@ import sqlite3
 from scrapy.exceptions import DropItem
 from toryburch.items import ToryburchItem
 
+
 class ToryburchPipeline(object):
     def __init__(self):
         try:

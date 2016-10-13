@@ -3,27 +3,24 @@
 import scrapy
 import sys
 # import re
+from scrapy.spiders import CrawlSpider
 from toryburch.items import ToryburchItem
 from scrapy.spiders import CrawlSpider, Rule
 from scrapy.selector import Selector
 from scrapy.http import Request
 from scrapy.linkextractors import LinkExtractor
+from scrapy.spiders.init import InitSpider
+from scrapy.http import Request, FormRequest
+
 reload(sys)
 sys.setdefaultencoding('utf-8')
 
-class TorySpider(scrapy.Spider):
+
+class TorySpider(CrawlSpider):
     name = "toryburch"
     allowed_domains = ["toryburch.com"]
     start_urls = [
-        # "https://www.toryburch.com/"
-        # "https://www.toryburch.com/on/demandware.store/Sites-ToryBurch_US-Site/default/Home-Show?cid=tb-geo-go-usa"
-        # "https://www.toryburch.com/on/demandware.store/Sites-ToryBurch_US-Site/default/Default-Start?campid=int_us"
         "http://www.toryburch.com/on/demandware.store/Sites-ToryBurch_US-Site/default/Home-EUShopUS?cid=tb-geo-go-usa"
-        # "http://www.toryburch.com/?campid=int_us"
-        # "https://www.toryburch.com/handbags-newarrivals/",
-        # "https://www.toryburch.com/handbags/clutches-evening-bags/",
-        # "https://www.toryburch.com/handbags/clutches-evening-bags/?icampid=hb_p3",
-        # "https://www.toryburch.com/robinson-convertible-shoulder-bag/28846.html?cgid=handbags-clutches&dwvar_28846_color=001&start=1",
         ]
 
     # rules = (
@@ -32,14 +29,18 @@ class TorySpider(scrapy.Spider):
     #     # Rule(LinkExtractor(allow=('', ), deny=('.*\.html.*', )), callback='parse_detail', follow = True),
     #
     #     # Extract links matching 'item.php' and parse them with the spider's method parse_item
-    #     # Rule(LinkExtractor(allow=('.*\.html.*', ))),
+    #     Rule(LinkExtractor(allow=(r'-\w+.html$', )),
+    #          callback = 'parse_tory', follow = True),
     # )
 
+    # def start_requests(self):
+    #     # yield scrapy.Request("http://www.toryburch.com/on/demandware.store/Sites-ToryBurch_US-Site/default/Home-EUShopUS?cid=tb-geo-go-usa", self.parse)
+    #     yield scrapy.Request("http://www.coachoutlet.com/", self.parse_coach)
 
     def parse(self, response):
         hxs = Selector(response)
         categories = ['New Arrivals', 'Baby Bags', 'Backpacks'
-            , 'Clutches & Evening Bags', 'Cross-Body Bags'
+            , 'Clutches & Evening Bags', 'Cross-Body Bags', 'Hobos'
             , 'Mini Bags', 'Satchels & Shoulder Bags', 'Totes', 'Sale']
         selects = []
         selects = hxs.xpath('//li[@class="handbags"]/ul/li/ul/li')
@@ -48,7 +49,6 @@ class TorySpider(scrapy.Spider):
             if categories.count(cate_name[0]) > 0:
                 cate_url = sel.xpath('a/@href').extract()
                 yield Request(cate_url[0], callback=self.parse_list)
-
 
     def parse_list(self, response):
         hxs = Selector(response)

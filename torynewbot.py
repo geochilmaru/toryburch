@@ -12,6 +12,7 @@ def show_categories(show_type):
         {'CATEGORY': 'Backpacks', 'COUNT': 0, 'CATEGORY_URL': ''},
         {'CATEGORY': 'Clutches & Evening Bags', 'COUNT': 0, 'CATEGORY_URL': ''},
         {'CATEGORY': 'Cross-Body Bags', 'COUNT': 0, 'CATEGORY_URL': ''},
+        {'CATEGORY': 'Hobos', 'COUNT': 0, 'CATEGORY_URL': ''},
         {'CATEGORY': 'Mini Bags', 'COUNT': 0, 'CATEGORY_URL': ''},
         {'CATEGORY': 'Satchels & Shoulder Bags', 'COUNT': 0, 'CATEGORY_URL': ''},
         {'CATEGORY': 'Totes', 'COUNT': 0, 'CATEGORY_URL': ''},
